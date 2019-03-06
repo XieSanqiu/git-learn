@@ -61,3 +61,14 @@
 			git push origin master
 	b)从远程库克隆
 		git clone git@github.com:michaelliao/gitskills.git
+
+7.分支管理
+	1）创建与合并分支
+		命令：git checkout -b dev 创建dev分支，然后切换到dev分支，这个命令相当于两条命令
+		命令：git branch dev 创建分支dev
+		命令：git checkout dev 切换分支到dev
+		命令：git branch 查看当前分支
+		命令：git merge dev 合并dev分支到当前分支
+		命令：git branch -d dev 删除分支dev
+		命令：git log --graph --pretty=oneline(一个commit在一行显示) --abbrev-commit(缩略commit id)
+		命令：git merge --no-ff -m <message> dev 加上no-ff可以保留被合并的分支的commit

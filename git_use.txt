@@ -85,3 +85,15 @@
 		命令：git stash apply， git stash drop 两条命令同上一条
 		命令：gitstash apply stash@｛0｝ 恢复指定的工作现场
 		命令：git cherry-pick <commit> 把commit这个提交做作的修改“复制到其他分支”，注意：只是这次提交所做的修改
+	5）Feature分支
+		命令：git branch -D dev 强行删除还未合并的分支
+	6）多人协作
+		命令：git remote 返回远程仓库的名称，默认为origin， git remote -v 显示更详细信息，包括仓库fetch和push地址
+		命令：git push origin dev 推送分支，可以是master，也可以是dev等分支
+		命令：git checkout -b dev origin/dev 多人协作中创建远程origin的dev分支到本地，前提是clone了origin，目前分支是master
+		多人协作中，两人修改了同一个文件，且你在后面推送会冲突，解决办法如下：
+			命令：git branch --set-upstream-to=origin/dev dev 指定本地dev分支与远程origin/dev分支的链接
+			命令：git pull 把最新的提交从origin/dev抓下来
+			抓下来后，与本地的dev合并有冲突，解决方法见7.2
+			命令：git push origin dev
+			

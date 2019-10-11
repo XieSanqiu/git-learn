@@ -71,5 +71,9 @@
 		命令：git branch 查看当前分支
 		命令：git merge dev 合并dev分支到当前分支
 		命令：git branch -d dev 删除分支dev
-		命令：git log --graph --pretty=oneline(一个commit在一行显示) --abbrev-commit(缩略commit id)
+		
+	2）解决冲突
+		当两个分支修改同一个文件后，合并分支就是导致冲突
+		解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
+		命令：git log --graph --pretty=oneline(一个commit在一行显示) --abbrev-commit(缩略commit id) 以简略的可视化的方式展示分支合并的情形
 		命令：git merge --no-ff -m <message> dev 加上no-ff可以保留被合并的分支的commit

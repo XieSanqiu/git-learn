@@ -70,10 +70,18 @@
 		命令：git checkout dev 切换分支到dev
 		命令：git branch 查看当前分支
 		命令：git merge dev 合并dev分支到当前分支
-		命令：git branch -d dev 删除分支dev
-		
+		命令：git branch -d dev 删除分支dev	
 	2）解决冲突
 		当两个分支修改同一个文件后，合并分支就是导致冲突
 		解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
-		命令：git log --graph --pretty=oneline(一个commit在一行显示) --abbrev-commit(缩略commit id) 以简略的可视化的方式展示分支合并的情形
+		命令：git log --graph --pretty=oneline(一个commit在一行显示) --abbrev-commit(缩略commit id) 以简略的可视化的方式展示分支合并的情形	
+	3）分支管理策略
 		命令：git merge --no-ff -m <message> dev 加上no-ff可以保留被合并的分支的commit
+		保留合并的分支意味着还能再用这个分支，如不保留，则找不到这个分支了，因为他已经与主分支合并了
+	4）Bug分支
+		命令：git stash 把当前工作现场“存储”起来，等以后恢复现场后继续工作
+		命令：git stash list 查看保存的现场
+		命令：git stash pop 把工作现场恢复的同时删除stash内容
+		命令：git stash apply， git stash drop 两条命令同上一条
+		命令：gitstash apply stash@｛0｝ 恢复指定的工作现场
+		命令：git cherry-pick <commit> 把commit这个提交做作的修改“复制到其他分支”，注意：只是这次提交所做的修改

@@ -96,4 +96,5 @@
 			命令：git pull 把最新的提交从origin/dev抓下来
 			抓下来后，与本地的dev合并有冲突，解决方法见7.2
 			命令：git push origin dev
-			
+	7）Rebase
+		
